@@ -1,5 +1,5 @@
 const button = document.getElementById("connectButton");
-const name = document.querySelector(".name");
+const text = document.getElementById("bluetoothText");
 
 const niclaService = '19b10000-0000-537e-4f6c-d104768a1214';
 const bleNusCharRXUUID = '19b10000-1001-537e-4f6c-d104768a1214';
@@ -33,6 +33,7 @@ function bluetoothConnect() {
             .then(device => {
                 bluetoothDevice = device;
                 console.log(device.name);
+                text.innerHTML = device.name
                 // Set up event listener for when device gets disconnected.
                 bluetoothDevice.addEventListener('gattserverdisconnected', onDisconnected);
 

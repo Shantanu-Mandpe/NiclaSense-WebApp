@@ -19,6 +19,7 @@ document.getElementById("connectButtonSerial").addEventListener("click",async ()
                     break;
                 }
                 if (value) {
+                    document.getElementById("serialText").innerHTML = value;
                     console.log(value);
                 }
             }
